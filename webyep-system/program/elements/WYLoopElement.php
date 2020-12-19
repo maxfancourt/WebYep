@@ -2,7 +2,7 @@
 // WebYep
 // (C) Objective Development Software GmbH
 // http://www.obdev.at
-session_start(); 
+//session_start(); // Disabled because this isn't currently in use.
 
 include_once(@webyep_sConfigValue("webyep_sIncludePath") . "/lib/WYElement.php");
 include_once(@webyep_sConfigValue("webyep_sIncludePath") . "/lib/WYLink.php");
@@ -43,7 +43,7 @@ class WYLoopElement extends WYElement
 	{
           global $webyep_oCurrentLoop;
          //
-         $a=$webyep_oCurrentLoop->iLoopID;
+         //$a=$webyep_oCurrentLoop->iLoopID;
          //print_r($a);
          //echo 'hello'; 
           //$webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];

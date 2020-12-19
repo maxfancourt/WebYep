@@ -86,10 +86,10 @@ class WYRichTextElement extends WYElement
    function sEditButtonHTML($sButtonImage = "edit-button.gif", $sToolTip = "", $oCustomEditURL = false)
    {
       $this->dEditorQuery = array();
-      if(isset($_SESSION['iLoopID'])){
-      $this->dEditorQuery[WY_QK_LOOP_ID]=$_SESSION['iLoopID'];
+      if(isset($_SESSION['loopid'])){
+      $this->dEditorQuery[WY_QK_LOOP_ID]=$_SESSION['loopid'];
       }
-      if ($this->oCSSURL) +$this->dEditorQuery[WY_QK_RICH_TEXT_CSS] = $this->oCSSURL->sURL();
+      if ($this->oCSSURL) $this->dEditorQuery[WY_QK_RICH_TEXT_CSS] = $this->oCSSURL->sURL();
       else $this->dEditorQuery[WY_QK_RICH_TEXT_CSS] = "";
 	   return parent::sEditButtonHTML($sButtonImage, $sToolTip);
    }
