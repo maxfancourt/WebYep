@@ -3,7 +3,7 @@ What is WebYep² ?
 
 WebYep2 is a Web Content Management System which is based heavily on the original 'https://github.com/obdev/WebYep', 
 and as before WebYep2 is an Open Source system. 
-There are many WebCMS available, even Open Source, but the original WebYep was different, and the new WebYep2 carries those innovative ideas/direction on to meet the new demands of a modern PHP7 compatible CMS:
+There are many WebCMS available, even Open Source, but the original WebYep was different, and the new WebYep2 carries those innovative ideas/direction on to meet the new demands of a modern PHP8 compatible CMS:
 
 * WebYep is designed to be simple. It's easy to install, understand and most of all use.
 * WebYep does not require a database server.... yipppeee
@@ -12,6 +12,15 @@ There are many WebCMS available, even Open Source, but the original WebYep was d
 * Freeway & RapidWeaver plugins are available plus code snippets for manual insertion into HTML. A Dreamweaver plugin is on the cards!!
 
  
+
+So whats new in version 2.2 release?
+============================
+
+1. WebYep has been upgraded to work in all PHP versions from PHP 5.6 to PHP 8.1.
+2. CKEditor has been upgraded to the latest minor version (4.20.0).
+3. TinyMCE editor has been upgraded to the latest minor version (4.9.11).
+4. Remove all error_log files since they are specific to each system.
+
 
 So whats new in version 2.1.1 release?
 ============================
