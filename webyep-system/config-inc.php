@@ -3,27 +3,26 @@
    // (C) Objective Development Software GmbH
    // http://www.obdev.at
 
-   // Wichtig:   In dieser Datei dürfen am Beginn und Ende keine Leerzeilen eingefügt werden!!!
-   //            Achten Sie auch darauf, dass diese Datei keinen Unicode Byte Order Marker (BOM) enthält!!!
+   // Wichtig: In dieser Datei d√ºrfen am Beginn und Ende keine Leerzeilen eingef√ºgt werden!!!
+   //          Achten Sie auch darauf, dass diese Datei keinen Unicode Byte Order Marker (BOM) enth√§lt!!!
    // Important: Do not insert ANYTHING before or after the PHP block in this file!!!
    //            Also make sure this file does not contain a Unicode Byte Order Marker (BOM)!!!
 
-   // Nähere Informationen zu den hier möglichen Einstellungen finden Sie in der WebYep Dokumentation
+   // N√§here Informationen zu den hier m√∂glichen Einstellungen finden Sie in der WebYep Dokumentation
    // Further information on the configuration settings in this file can be found in the WebYep documentation
 
 
 
-   // Name und Kennwort für die Anmeldung
+   // Name und Kennwort f√ºr die Anmeldung
    // --
    // Username and password logging in
-
 
 $webyep_sAdminName = "admin";
 $webyep_sAdminPassword = "";
 
 
-   // Multi Login - zusätzliche Logins für einzelne Seiten o. Seitengruppen
-   // (entfernen Sie die Doppel-Schrägstriche, um es zu verwenden)
+   // Multi Login - zus√§tzliche Logins f√ºr einzelne Seiten o. Seitengruppen
+   // (entfernen Sie die Doppel-Schr√§gstriche, um es zu verwenden)
    // $webyep_aMultiLoginName[] = "einName";
    // $webyep_aMultiLoginPassword[] = "einKennwort";
    // $webyep_aMultiLoginURLPatterns[] = "/eineSeite.php /einOrdner/*";
@@ -61,8 +60,8 @@ define('BASE_URL', '');
 define('BASE_PATH', realpath(dirname(__FILE__) . '/../webyep-system'));
 
 
-   // Wenn eine Seite editierbare Felder enthält, der/die BenutzerIn aber keine Editier-Rechte hat,
-   // können die Editier-Knöpfe inaktiv oder gar nicht angezeigt werden
+   // Wenn eine Seite editierbare Felder enth√§lt, der/die BenutzerIn aber keine Editier-Rechte hat,
+   // k√∂nnen die Editier-Kn√∂pfe inaktiv oder gar nicht angezeigt werden
    // --
    // If a page contains editable fields but the user has insiffucient privileges
    // WebYep can display the edit buttons disable ot not at all
@@ -70,7 +69,7 @@ define('BASE_PATH', realpath(dirname(__FILE__) . '/../webyep-system'));
 $webyep_bShowDisabledEditButtons = false;
 
 
-   // Ob andere BenutzerInnen als der/die Haupt-BenutzerIn ($webyep_sAdminName) "globale" Inhalte editieren dürfen sollen
+   // Ob andere BenutzerInnen als der/die Haupt-BenutzerIn ($webyep_sAdminName) "globale" Inhalte editieren d√ºrfen sollen
    // --
    // Whether editors other than the main editor should be able to edit "global" fields
 
@@ -104,13 +103,13 @@ $webyep_sCharset = "utf-8";
 $webyep_sHTMLStandard = "auto";
 
 
-   // Die Einstellung $webyep_bUseTablesForMenus wird nicht mehr unterstützt!
+   // Die Einstellung $webyep_bUseTablesForMenus wird nicht mehr unterst√ºtzt!
    // $webyep_bUseTablesForMenus is deprecated and always false now!
 
 $webyep_sMenuType = "listJS";
-   // mögliche Werte:
+   // m√∂gliche Werte:
    // "list".....ohne JavaScript-Funktion
-   // "listJS"...mit JavaScript-Funktion zum Ein-/Ausblenden von Menüzweigen
+   // "listJS"...mit JavaScript-Funktion zum Ein-/Ausblenden von Men√ºzweigen
    // --
    // possible values are:
    // "list".....no JavaScript functionality
@@ -118,54 +117,54 @@ $webyep_sMenuType = "listJS";
 
 
 
-   // nur für $webyep_sMenuType="listJS":
+   // nur f√ºr $webyep_sMenuType="listJS":
    // only for $webyep_sMenuType="listJS":
 
 $webyep_bAutoCloseMenus = true;
-   // mögliche Werte:
-   // true.....beim öffnen eines Menüzweiges werden automatisch alle anderen Zweige geschlossen
-   // false....die Menüzweige werden manuell von den BenutzerInnen geschlossen
+   // m√∂gliche Werte:
+   //    true.....beim √∂ffnen eines Men√ºzweiges werden automatisch alle anderen Zweige geschlossen
+   //    false....die Men√ºzweige werden manuell von den BenutzerInnen geschlossen
    // --
    // possible values are:
    //    true.....when expanding a menu tree, all other tree collapse automatically
    //    false....menu trees are not automatically collapsed
 
-$webyep_bRememberOpenMenus = true;
-   // mögliche Werte:
-   // true.....geöffnete Menüzweige werden in einem Cookie gespeichert
-   // false....geöffnete Menüzweige werden nicht gespeichert - sobald eine neue Seite geöffnet wird, werden alle Zweige automatisch geschlossen, außer der, zu dem die aktuelle Seite gehört
+   $webyep_bRememberOpenMenus = true;
+   // m√∂gliche Werte:
+   //    true.....ge√∂ffnete Men√ºzweige werden in einem Cookie gespeichert
+   //    false....ge√∂ffnete Men√ºzweige werden nicht gespeichert - sobald eine neue Seite ge√∂ffnet wird, werden alle Zweige automatisch geschlossen, au√üer der, zu dem die aktuelle Seite geh√∂rt
    // --
    // possible values are:
-   // true.....expanded menu trees will be saved in a cookie
-   //  false....expanded menu trees will not be saved - when a new page is opened, all trees but the one the page belongs to are closed.
-   
-   
+   //    true.....expanded menu trees will be saved in a cookie
+   //    false....expanded menu trees will not be saved - when a new page is opened, all trees but the one the page belongs to are closed.
+
+
 $webyep_submenu = "OFF";
    // possible values are:
-   // OFF..... Collapse Menu Trees of WebYep menu window in 'Edit Mode' 
-   // ON.... Expand Menu Trees of WebYep menu window in 'Edit Mode'  
- 
-   
+   // OFF..... Collapse Menu Trees of WebYep menu window in 'Edit Mode'
+   // ON.... Expand Menu Trees of WebYep menu window in 'Edit Mode'
+
+
 
 
 
 $webyep_bOpenFullURLsInNewWindow = false;
    // Set to true of you want the Long Text and Image Elements to open full URLs (including the http:// part) in a new browser window
    // --
-   // Setzen Sie diesen Wert auf true, wenn das Fließtext-Element und das Bild-Element absolute URLs (die den "http://"-Teil enthalten) in einem neuen Browser-Fenster öffnen sollen
+   // Setzen Sie diesen Wert auf true, wenn das Flie√ütext-Element und das Bild-Element absolute URLs (die den "http://"-Teil enthalten) in einem neuen Browser-Fenster √∂ffnen sollen
 
 
 
-   //   // Wenn Sie das weiße Etikett webyep wünschen, können Sie die...
+   //   // Wenn Sie das wei√üe Etikett webyep w√ºnschen, k√∂nnen Sie die...
    // 1 - Produktname,
    // 2 - der Firmenname,
    // 3 - und Firmen-URL-Link
-   // Dies wird in jedem: Editor-Fenster, die Hilfe und die Ankündigung Fenster erscheinen)
+   // Dies wird in jedem: Editor-Fenster, die Hilfe und die Ank√ºndigung Fenster erscheinen)
    // --
-   // If you wish to white label webyep, you can change the... 
-   // 1 - product name, 
-   // 2 - the company name, 
-   // 3 - and company URL link 
+   // If you wish to white label webyep, you can change the...
+   // 1 - product name,
+   // 2 - the company name,
+   // 3 - and company URL link
    // Note this will appear in every: editor window, the help and the notice windows)
 $webyep_sProductName = 'MyProduct';
 $webyep_sCompanyName = 'WebYep by Objective Development';
@@ -245,15 +244,15 @@ $webyep_LightboxType = "jquery";
 
    /**
    * Define date format and time format according to your region
-   * Defined format will be shown on Gustebook 
+   * Defined format will be shown on Guestbook
    * Refrence : http://php.net/manual/en/datetime.formats.date.php
    */
 $webyep_CustomDateFromat = "j-n-Y";
 $webyep_CustomTimeFromat = "g:m a";
 
 
-   // Wichtig: In dieser Datei dürfen am Beginn und Ende keine Leerzeilen eingefügt werden!!!
-   //          Achten Sie auch darauf, dass diese Datei keinen Unicode Byte Order Marker (BOM) enthält!!!
+   // Wichtig: In dieser Datei d√ºrfen am Beginn und Ende keine Leerzeilen eingef√ºgt werden!!!
+   //          Achten Sie auch darauf, dass diese Datei keinen Unicode Byte Order Marker (BOM) enth√§lt!!!
    // --
    // Important: Do not insert ANYTHING before or after the PHP block in this file!!!
    //            Also make sure this file does not contain a Unicode Byte Order Marker (BOM)!!!
