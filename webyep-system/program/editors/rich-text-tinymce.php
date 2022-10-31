@@ -484,7 +484,7 @@
 	<link rel=stylesheet href="css/extra-css.css">
     <?php include("remember-editor-size.js.php"); ?>
 
-      <script src="https://tinymce.cachefly.net/4.3/tinymce.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.11/tinymce.min.js"></script>
   <script>tinymce.init({
   selector: 'textarea',
   plugins: [

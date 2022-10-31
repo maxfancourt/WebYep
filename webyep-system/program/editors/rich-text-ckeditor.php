@@ -435,6 +435,7 @@
 			width: 100%;
 			bottom: 200px;
 			min-height: 28px;
+			height: calc(100% - 180px);
 			z-index: 6;
 			padding-left: 18px;
 			padding-right: 18px
@@ -511,7 +512,7 @@
 	<link rel=stylesheet href="css/extra-css.css">
     <?php include("remember-editor-size.js.php"); ?>
 
-    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
 
 </head>
 <?php
@@ -563,6 +564,8 @@
     <?php } else { echo "<blockquote>"; echo "<div class='response'>$sResponse</div>"; if ($bOK) echo (new WYEditor())->sPostSaveScript(); else echo "<p class='textButton'>" . webyep_sBackLink() . "</p>"; echo "</blockquote>"; } ?>
 
         <script>
+            var container = document.getElementById('formcontainerouter');
+            CKEDITOR.config.height = container.offsetHeight - 120;
             CKEDITOR.replace( 'HTML_CODE' );
         </script>
 			

@@ -43,14 +43,14 @@
 	  // 			 include_once($oEditorsFolder->sPath);
 	  // 		  }
 		  else {
-		  			  unset($oP);
-		  			  $oP = od_clone($goApp->oProgramPath);
-		  			  $oP->addComponent("opt");
-		  			  $oP->addComponent("fckeditor");
-		  			  if ($oP->bExists()) {
-		  				 $oEditorsFolder->addComponent("rich-text-fckeditor.php");
-		  				 include_once($oEditorsFolder->sPath);
-		  			  }
+              unset($oP);
+              $oP = od_clone($goApp->oProgramPath);
+              $oP->addComponent("opt");
+              $oP->addComponent("fckeditor");
+              if ($oP->bExists()) {
+                 $oEditorsFolder->addComponent("rich-text-fckeditor.php");
+                 include_once($oEditorsFolder->sPath);
+              }
 			  else {
 				  unset($oP);
 				  $oP = od_clone($goApp->oProgramPath);
