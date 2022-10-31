@@ -561,9 +561,6 @@ $oCurrentURL = new WYURL();
 			
                 if (!$bIsExpanded || !$webyep_bAutoCloseMenus) {
                     $sTitleJS = "if (webyep_showHideMenuTree($webyep_iMenuID, $iItemID)) {webyep_menuItemClick($webyep_iMenuID, \"$sURL\", \"" . $this->sTarget ."\") } return false;";
-                
-                print_r( $sTitleJS);
-                
                 } else {
                     $sTitleJS = "webyep_menuItemClick($webyep_iMenuID, \"$sURL\", \"" . $this->sTarget ."\"); return false;";
                 }
@@ -595,7 +592,7 @@ $oCurrentURL = new WYURL();
      */
     function dConvertData() {
         global $goApp;
-        if ($this->iVersion() < WY_MENU_VERSION) {
+        if ($this->iVersion() && $this->iVersion() < WY_MENU_VERSION) {
             $data = $this->dContent;
             if ($this->iVersion() == 1) { // convert to v2
                 $goApp->log('WYMenuElement: converting from v1 to v2');

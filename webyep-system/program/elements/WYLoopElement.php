@@ -41,15 +41,11 @@ class WYLoopElement extends WYElement
 
 	function iCurrentLoopID()
 	{
-          global $webyep_oCurrentLoop;
-         //
-         $a=$webyep_oCurrentLoop->iLoopID;
-         //print_r($a);
-         //echo 'hello'; 
-          //$webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];
-         //unset($_SESSION["loopid"]);
-	   if ( $webyep_oCurrentLoop != od_nil &&  $webyep_oCurrentLoop->iElementsLeft > 0) return $webyep_oCurrentLoop->iLoopID;
-	   else return 0;
+		global $webyep_oCurrentLoop;
+		//$webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];
+		//unset($_SESSION["loopid"]);
+		if ( $webyep_oCurrentLoop != od_nil &&  $webyep_oCurrentLoop->iElementsLeft > 0) return $webyep_oCurrentLoop->iLoopID;
+		else return 0;
 	}
 
 	function setCurrentLoopID($i)
@@ -146,19 +142,7 @@ EOT;
 		$this->dContent[WY_DK_DISABLEDLOOPIDARRAY] = $a;
 	}
 
-	/*function loopStart($bShowControls = true,$ids)
-	{
-		
-		global $goApp;
-
-		if ($bShowControls) 
-
-			$this->iLoopID=$ids;
-		$this->showEditButtons($ids);
-		$goApp->outputWarningPanels(); // give App a chance to say something
-	}*/
-	
-	function loopStart($bShowControls = true,$ids)
+	function loopStart($bShowControls = true,$ids = null)
 	{
 		global $goApp;
 		

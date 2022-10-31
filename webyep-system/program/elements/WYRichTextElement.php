@@ -14,7 +14,7 @@ define("WY_QK_RICH_TEXT_CSS", "CSS_URL");
 function webyep_sRichTextContent($sFieldName, $bGlobal)
 {
 
-	$o = new WYRichTextElement($sFieldName, $bGlobal, false); print_r($o);
+	$o = new WYRichTextElement($sFieldName, $bGlobal, false);// print_r($o);
 	return $o->sText();
 }
 /**
@@ -39,11 +39,10 @@ class WYRichTextElement extends WYElement
    var $oCSSURL;
    var $bObfuscate;
 
-   function webyep_richText($sFieldName, $bGlobal, $sCSSURL, $bObfuscate = true, $mwEditorWidth, $mwEditorHeight)
+   function webyep_richText($sFieldName, $bGlobal, $sCSSURL, $bObfuscate = true, $mwEditorWidth=850, $mwEditorHeight=620)
    {
       global $goApp; //print_r($goApp);
       $o = new WYRichTextElement($sFieldName, $bGlobal, $sCSSURL, $bObfuscate, $mwEditorWidth, $mwEditorHeight);
-//print_r($o);
       $s = $o->sDisplay();
       if ($goApp->bEditMode) {
          echo $o->sEditButtonHTML("edit-button-rich-text.png"); 
@@ -89,7 +88,7 @@ class WYRichTextElement extends WYElement
       if(isset($_SESSION['iLoopID'])){
       $this->dEditorQuery[WY_QK_LOOP_ID]=$_SESSION['iLoopID'];
       }
-      if ($this->oCSSURL) +$this->dEditorQuery[WY_QK_RICH_TEXT_CSS] = $this->oCSSURL->sURL();
+		if ($this->oCSSURL) $this->dEditorQuery[WY_QK_RICH_TEXT_CSS] = $this->oCSSURL->sURL();
       else $this->dEditorQuery[WY_QK_RICH_TEXT_CSS] = "";
 	   return parent::sEditButtonHTML($sButtonImage, $sToolTip);
    }

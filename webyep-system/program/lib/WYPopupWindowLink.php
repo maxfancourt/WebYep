@@ -48,6 +48,7 @@ class WYPopupWindowLink extends WYHTMLTag
 	function __construct($oURL='', $sName='', $iW='', $iH='', $iType='')
 	{
 		global $goApp;
+		global $webyep_oCurrentLoop;
 		static $i = 0; 
 		global $webyep_sModalWindowType;
 		$sJS = "";
@@ -56,14 +57,19 @@ class WYPopupWindowLink extends WYHTMLTag
 
 		$this->dAttributes["href"] = $oURL->sEURL();
 
-		//if(!empty($webyep_oCurrentLoop)){ echo "yes";
-		$loopid= $_SESSION["loopid"];
-		//}else { $loopid=0; print_r($webyep_oCurrentLoop);}
+//		$loopid = 0;
+//		if (!empty($webyep_oCurrentLoop->iLoopID)){
+//			$loopid= $_SESSION["loopid"];
+//		}
+		//else { $loopid=0; print_r($webyep_oCurrentLoop);}
 
-		$url=$oURL->sURL();$WEBYEP_LOOP_ID="0";
-		//$WEBYEP_LOOP_ID=$loopid;
-		if(isset($_REQUEST["WEBYEP_LOOP_ID"])){ $WEBYEP_LOOP_ID=$_REQUEST["WEBYEP_LOOP_ID"]; }
-		$url=str_replace('WEBYEP_LOOP_ID='.$WEBYEP_LOOP_ID,'WEBYEP_LOOP_ID='.$loopid,$url); 
+		$url=$oURL->sURL();
+		if (isset($_SESSION["loopid"])) {
+			$WEBYEP_LOOP_ID="0";
+			//$WEBYEP_LOOP_ID=$loopid;
+			if(isset($_REQUEST["WEBYEP_LOOP_ID"])){ $WEBYEP_LOOP_ID=$_REQUEST["WEBYEP_LOOP_ID"]; }
+			$url=str_replace('WEBYEP_LOOP_ID='.$WEBYEP_LOOP_ID,'WEBYEP_LOOP_ID='.$_SESSION["loopid"],$url);
+		}
 
 		if($webyep_sModalWindowType == 'mootools' || $webyep_sModalWindowType == 'jquery' || $webyep_sModalWindowType == 'scriptaculous'){
 

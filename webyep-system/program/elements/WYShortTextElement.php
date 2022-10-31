@@ -41,7 +41,7 @@ function webyep_shortText($sFieldName, $bGlobal, $mwEditorWidth=500, $mwEditorHe
 
 class WYShortTextElement extends WYElement
 {
-   function webyep_shortText($sFieldName, $bGlobal, $mwEditorWidth, $mwEditorHeight)
+   function webyep_shortText($sFieldName, $bGlobal, $mwEditorWidth=500, $mwEditorHeight=250)
    {
 	  
       global $goApp, $webyep_sCharset;global $webyep_oCurrentLoop; 

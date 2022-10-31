@@ -1,9 +1,10 @@
-<?php session_start();
+<?php
 /**
  * WebYep
  * @copyright Objective Development Software GmbH
  * @link http://www.obdev.at
  */
+session_start();
 
 include_once(@webyep_sConfigValue("webyep_sIncludePath") . "/lib/WYElement.php");
 include_once(@webyep_sConfigValue("webyep_sIncludePath") . "/lib/WYLink.php");
@@ -47,25 +48,25 @@ define("WY_GALLERY_CSS_TEXT", "WebYepGalleryText");
 function webyep_gallery($sFieldName, $bGlobal, $iMaxTNWidth, $iMaxTNHeight, $iCols = 3, $iMaxImageWidth = 0, $iMaxImageHeight = 0, $iCellWidth = 0, $mwEditorWidth=430, $mwEditorHeight=400)
 {	
 	global $goApp;
-/* modify code */
+	/* modify code */
 
-global $webyep_oCurrentLoop; 
-//print_r($webyep_oCurrentLoop);
+	global $webyep_oCurrentLoop;
+	//print_r($webyep_oCurrentLoop);
 	static $k=0;
-if($webyep_oCurrentLoop){
+	static $j=0;
+	if($webyep_oCurrentLoop){
+		$webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];	
+		$k++;
+	} 
 
-	 $webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];	
-$k++;
-} 
-
-$o = new WYGalleryElement($sFieldName, $bGlobal, $iMaxTNWidth, $iMaxTNHeight, $iCols, $iMaxImageWidth, $iMaxImageHeight, $iCellWidth, $mwEditorWidth, $mwEditorHeight);
+	$o = new WYGalleryElement($sFieldName, $bGlobal, $iMaxTNWidth, $iMaxTNHeight, $iCols, $iMaxImageWidth, $iMaxImageHeight, $iCellWidth, $mwEditorWidth, $mwEditorHeight);
 	$s = $o->sDisplay();
-if ($goApp->bEditMode) {
+	if ($goApp->bEditMode) {
 		//echo $o->sEditButtonHTML("edit-button-image.png", "", $goApp->bIsiPhone ? $o->oIPhoneEditURL():od_nil);
 		if (!$s) $s = $o->sName;
 	}
 	echo $s;
-$j++;
+	$j++;
 }
 
 
@@ -104,7 +105,7 @@ class WYGalleryElement extends WYElement
 	{ 
 
 
-		global $goApp;
+		global $goApp, $webyep_oCurrentLoop;
 		parent::__construct($sN, $bG);
 		$this->iTNWidth = $iTNw;
 		$this->iTNHeight = $iTNh;
@@ -119,15 +120,15 @@ class WYGalleryElement extends WYElement
 		$this->iEditedID = false;
 		if (!isset($this->dContent[WY_DK_GALLERY_ID_ARRAY])) $this->dContent[WY_DK_LOOPIDARRAY] = array();
 		if ($goApp->bEditMode && $this->bUserMayEditThisElement()) $this->dispatchEditAction();
-	static $k=0;
-if($webyep_oCurrentLoop){
-	$loopArr=$webyep_oCurrentLoop->dContent['CONTENT'];
-	$loopVal=floor($k/1); 
-	// print_r($loopArr);	
-	$loopid=$loopArr[$loopVal]; 
-	//echo $webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];	
-$k++;
-} 
+		static $k=0;
+		if($webyep_oCurrentLoop){
+			$loopArr=$webyep_oCurrentLoop->dContent['CONTENT'];
+			$loopVal=floor($k/1); 
+			// print_r($loopArr);	
+			$loopid=$loopArr[$loopVal]; 
+			//echo $webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];	
+			$k++;
+		} 
 	}
 
 	function oIPhoneEditURL()

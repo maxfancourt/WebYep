@@ -13,6 +13,9 @@ define("WY_QK_OLD_DI", "WEBYEP_DI"); // old (pre 1.4.6) query key for document i
 define("WYDOC_DOCFILE", "documents");
 
 $webyep_iLoopID = 0;
+if (!isset($_SESSION["loopid"])) {
+	$_SESSION["loopid"] = 0;
+}
 if (!isset($webyep_iDILIOffset)) $webyep_iDILIOffset = 0;
 
 class WYDocument

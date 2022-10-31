@@ -16,11 +16,13 @@ function webyep_sLongTextContent($sFieldName, $bGlobal) {
 
 function webyep_longText($sFieldName, $bGlobal, $deprecated1 = "", $bHide = false, $mwEditorWidth=520, $mwEditorHeight=450) {
 	global $webyep_oCurrentLoop; static $j=0;
-		$loopArr=$webyep_oCurrentLoop->dContent['CONTENT'];
-		$loopVal=floor($j/1); 
-		$loopid=$loopArr[$loopVal];
+    if (!empty($webyep_oCurrentLoop->dContent['CONTENT'])) {
+        $loopArr=$webyep_oCurrentLoop->dContent['CONTENT'];
+        $loopVal=floor($j/1);
+        $loopid=$loopArr[$loopVal];
+    }
 	if(!empty($webyep_oCurrentLoop)){
-	 $webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];
+	    $webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];
 	}
 
     (new WYLongTextElement())->webyep_longText($sFieldName, $bGlobal, $deprecated1, $bHide, $mwEditorWidth, $mwEditorHeight);
@@ -33,10 +35,10 @@ class WYLongTextElement extends WYElement {
     // instance variables
     var $bHideEMailAddress;
 
-    function webyep_longText($sFieldName, $bGlobal, $deprecated1 = "", $bHide = false, $mwEditorWidth, $mwEditorHeight) {
-       
+    function webyep_longText($sFieldName, $bGlobal, $deprecated1 = "", $bHide = false, $mwEditorWidth=520, $mwEditorHeight=450) {
+
         $o = new WYLongTextElement($sFieldName, $bGlobal, $bHide, $mwEditorWidth, $mwEditorHeight);
-	global $goApp;global $webyep_oCurrentLoop; 
+	global $goApp;global $webyep_oCurrentLoop;
 		//echo $webyep_oCurrentLoop->iLoopID;
 //print_r($o);
         $s = $o->sDisplay();

@@ -17,8 +17,8 @@ function webyep_attachment($sFieldName, $bGlobal = false, $sCustomIcon = "", $mw
 	global $goApp;
 
 	global $webyep_oCurrentLoop; 
-	 if(!empty($webyep_oCurrentLoop)){
-	 $webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];
+	if(!empty($webyep_oCurrentLoop)){
+		$webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];
 	}
 
 	$o = new WYAttachmentElement($sFieldName, $bGlobal, $sCustomIcon, $mwEditorWidth, $mwEditorHeight);

@@ -365,8 +365,11 @@ class WYApplication
 			$sValue = $sDefaultValue;
 			$bStrip = false;
 		}
-		if ($bStrip && get_magic_quotes_gpc()) $sValue = stripslashes($sValue);
-		
+
+		if (version_compare(PHP_VERSION, '7.4.0', '<')) {
+			if ($bStrip && get_magic_quotes_gpc()) $sValue = stripslashes($sValue);
+		}
+
 		return $sValue;
 	}
 

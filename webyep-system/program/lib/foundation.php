@@ -33,12 +33,12 @@ function webyep_sBackLink() {
 // Now it's getting weird: We need to have a od_clone() function in PHP4
 // to be compatible with PHP5 - but PHP5 must not see this function def!!!
 // Thanx to Steven Wittens for the hint!
-if (preg_match("|^7|", phpversion())) {
+if (version_compare(PHP_VERSION, '7.0.0') >= 0) {
 	eval('function od_clone($o) { return $o === od_nil ? od_nil:clone $o; }');
-}elseif (preg_match("|^5|", phpversion())) {
-   eval('function od_clone($o) { return $o === od_nil ? od_nil:clone($o); }');
+} elseif (version_compare(PHP_VERSION, '5.0.0') >= 0) {
+	eval('function od_clone($o) { return $o === od_nil ? od_nil:clone($o); }');
 } else {
-   eval('function od_clone($o) { return $o; }');
+	eval('function od_clone($o) { return $o; }');
 }
 
 function webyep_aScanDirectory ($sDir, $sPattern = "") { // use WYPath instead of string?

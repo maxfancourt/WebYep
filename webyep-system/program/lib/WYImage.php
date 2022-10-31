@@ -231,12 +231,14 @@ class WYImage extends WYHTMLTag {
         $oP = $this->oPath();
         if (is_readable($oP->sPath)) {
             @$aDim = getimagesize($oP->sPath);
-            $iW = $aDim[0];
-            $iH = $aDim[1];
-        }
-        if ($iW && $iH) {
-            $this->dAttributes['width'] = $iW;
-            $this->dAttributes['height'] = $iH;
+            if ($aDim) {
+                $iW = $aDim[0];
+                $iH = $aDim[1];
+                if ($iW && $iH) {
+                    $this->dAttributes['width'] = $iW;
+                    $this->dAttributes['height'] = $iH;
+                }
+            }
         }
         // $this->dAttributes["border"] = 0;
         $this->dAttributes['alt'] = '';

@@ -21,12 +21,15 @@ function webyep_sMarkupTextContent($sFieldName, $bGlobal)
 */
 function webyep_markupText($sFieldName, $bGlobal, $sCSSURL = "", $bObfuscate = true, $mwEditorWidth=850, $mwEditorHeight=550) {
 	global $webyep_oCurrentLoop; static $j=0;
+	if (!empty($webyep_oCurrentLoop->dContent['CONTENT'])) {
 		$loopArr=$webyep_oCurrentLoop->dContent['CONTENT'];
-		$loopVal=floor($j/1); 
+		$loopVal=floor($j/1);
 		$loopid=$loopArr[$loopVal];
-	 if(!empty($webyep_oCurrentLoop)){
-	 $webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];
 	}
+	if(!empty($webyep_oCurrentLoop)){
+		$webyep_oCurrentLoop->iLoopID=$_SESSION["loopid"];
+	}
+
 	(new WYMarkupTextElement())->webyep_markupText($sFieldName, $bGlobal, $sCSSURL, $bObfuscate, $mwEditorWidth, $mwEditorHeight);
 $j++;
 }
@@ -39,7 +42,7 @@ class WYMarkupTextElement extends WYElement
    var $oCSSURL;
    var $bObfuscate;
 
-   function webyep_markupText($sFieldName, $bGlobal, $sCSSURL = "", $bObfuscate = true, $mwEditorWidth, $mwEditorHeight)
+   function webyep_markupText($sFieldName, $bGlobal, $sCSSURL = "", $bObfuscate = true, $mwEditorWidth=850, $mwEditorHeight=550)
    {
       global $goApp;
 
