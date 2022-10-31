@@ -133,8 +133,8 @@ $webyep_aMultiLoginURLPatterns = array();
 $webyep_bDoNotIncludeMootools = false;// Mootools will be included, if required (see below)
 
 $webyep_iMajorVersion = 2;
-$webyep_iMinorVersion = 1;
-$webyep_iSubVersion = 1;
+$webyep_iMinorVersion = 3;
+$webyep_iSubVersion = 0;
 $webyep_sCopyrightLine = "&copy; 2020, <a href='http://www.obdev.at/' target='_blank'>Objective Development Software GmbH</a>";
 
 if (isset($_GET['webyep_sIncludePath']) || isset($_POST['webyep_sIncludePath']) || isset($_COOKIE['webyep_sIncludePath']) || isset($_SESSION['webyep_sIncludePath'])) exit(-1);

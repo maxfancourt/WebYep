@@ -13,6 +13,14 @@ There are many WebCMS available, even Open Source, but the original WebYep was d
 
  
 
+So whats new in version 2.3 release?
+============================
+
+1. Simplified the code used to detect the editor.
+2. Fix "loopid" typo in Rich Text Element.
+
+
+
 So whats new in version 2.2 release?
 ============================
 
@@ -20,6 +28,7 @@ So whats new in version 2.2 release?
 2. CKEditor has been upgraded to the latest minor version (4.20.0).
 3. TinyMCE editor has been upgraded to the latest minor version (4.9.11).
 4. Remove all error_log files since they are specific to each system.
+
 
 
 So whats new in version 2.1.1 release?
