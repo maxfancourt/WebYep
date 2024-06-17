@@ -1,3 +1,14 @@
+Yes WebYep 3.1 is done!!
+================
+WebYep 3.1 
+Yes hold onto your hats – WebYep 3.1 has finally landed.... Well almost. Yes, the latest version is almost out, and it's practically perfect (if you ignore the minor detail of incomplete documentation... but who needs that!!
+So, what magical wonders does this release bring you?
+* 🎵 WebYep Audio: You can now upload audio files. Just what you needed. A way to share your questionable taste in music with the world!
+* 📖 WebYep Guestbook: The guestbook is back! Because nothing says cutting-edge web technology like a digital sign-in book. Prepare for a flood of "Nice site!" and "First!" comments.
+* And let's not forget the bug fixes! I’ve heroically squashed more bugs that were tripping over PHP 8.3.
+I'll be rolling out this masterpiece in the next few weeks. Until then, try to contain your excitement.
+
+
 What is WebYep 3
 ================
 WebYep3 is a Web Content Management System which is based heavily on the original 'https://github.com/obdev/WebYep', 
