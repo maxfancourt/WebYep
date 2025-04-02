@@ -520,15 +520,30 @@
 	<link rel="stylesheet" href="../opt/redactor/redactor.css" />
 	<script src="../opt/redactor/redactor.js"></script>
 	<!-- Redactor's plugin -->
+	<link rel="stylesheet" href="../opt/redactor/plugins/alignment.css" />
 	<script src="../opt/redactor/styles.js"></script>
+	<script src="../opt/redactor/plugins/inlinestyle.js"></script>	
 	<script src="../opt/redactor/plugins/fontfamily.js"></script>
 	<script src="../opt/redactor/plugins/fontcolor.js"></script>
 	<script src="../opt/redactor/plugins/fontsize.js"></script>
 	<script src="../opt/redactor/plugins/textdirection.js"></script>
 	<script src="../opt/redactor/plugins/table.js"></script>
+
+	<script src="../opt/redactor/plugins/source.js"></script>
+	<script src="../opt/redactor/plugins/textexpander.js"></script>	
+	<script src="../opt/redactor/plugins/properties.js"></script>
+	<script src="../opt/redactor/plugins/alignment.js"></script>
+	<script src="../opt/redactor/plugins/removeformat.js"></script>
+	<script src="../opt/redactor/plugins/specialcharacters.js"></script>
+	
 	<script src="../opt/redactor/plugins/imagemanager.js"></script>
+	<!-- <script src="../opt/redactor/plugins/redactor_image_email.js"></script> -->
 	<script src="../opt/redactor/plugins/filemanager.js"></script>
-	<script src="../opt/redactor/plugins/video.js"></script>	
+	<script src="../opt/redactor/plugins/video.js"></script>
+	
+	
+	<!-- <script src="../opt/redactor/plugins/clips.js"></script> -->
+	
 	
 	<!-- CHANGE LANGUAGE HERE -->
 
@@ -548,6 +563,8 @@
 		function()
 		{
 			$('textarea').redactor({ 
+				imageResizable: true, // Enable image resizing
+				imagePosition: true, // Enable image positioning
 			////  CHANGE LANGUAGE HERE  /////
 				lang: '<?php echo $webyep_rLang?>',
 			/////////////////////////////////
@@ -573,12 +590,12 @@
 				
 				iframe: true,
 				css: '<?php echo $sCSSURL ?>',
-				plugins: ['styles','textdirection','fontfamily','fontcolor','fontsize','table','imagemanager','filemanager','video'],
+				plugins: ['styles','textdirection','alignment','fontfamily','fontcolor','fontsize','table','imagemanager','filemanager','video','source','inlinestyle','properties','removeformat','specialcharacters'],
 				imageUpload: '../opt/redactor/scripts/image_upload.php',
 				imageManagerJson: '<?php echo BASE_URL; ?>/webyep-system/data/userfiles/json/image.json',
 				fileUpload: '../opt/redactor/scripts/file_upload.php',
 				fileManagerJson: '<?php echo BASE_URL; ?>/webyep-system/data/userfiles/json/files.json',
-				stylesJson: redStylesJSON
+				stylesJson: redStylesJSON,
 			});
 		}
 		
@@ -602,6 +619,7 @@
 	
 	
 <!--  end for v10 -->
+	
 </head>
 
 <?php

@@ -28,14 +28,17 @@ define("WY_GB_CSS_DATETIME", "WebYepGBDateTime");
 define("WY_GB_CSS_EMAIL", "WebYepGBEMail");
 define("WY_GB_CSS_MESSAGE", "WebYepGBMessage");
 
-// Define the function for displaying the guestbook
-function webyep_guestbook($sFieldName, $iMaxEntries, $sOwnerEMail = "", $bHide = false)
-{
-    global $goApp;
+// Check if the function is already declared to prevent re-declaration
+if (!function_exists('webyep_guestbook')) {
+    // Define the function for displaying the guestbook
+    function webyep_guestbook($sFieldName, $iMaxEntries, $sOwnerEMail = "", $bHide = false)
+    {
+        global $goApp;
 
-    $o = new WYGuestbookElement($sFieldName, $iMaxEntries, $sOwnerEMail, $bHide);
-    $s = $o->sDisplay();
-    echo $s;
+        $o = new WYGuestbookElement($sFieldName, $iMaxEntries, $sOwnerEMail, $bHide);
+        $s = $o->sDisplay();
+        echo $s;
+    }
 }
 
 // Define the WYGuestbookElement class
@@ -140,10 +143,7 @@ class WYGuestbookElement extends WYElement
             $sText .= "\n\n";
             $sText .= $oPageURL->sURL(true, true, true) . "\n\n";
             $sText .= "********************************************************\n\n";
-            // Send email notification
-            if (!@mail($this->sEMail, $sSubject, $sText, "From: $sFrom")) {
-                error_log("Email failed to send to {$this->sEMail}.");
-            }
+            @mail($this->sEMail, $sSubject, $sText, "From: $sFrom");
         }
         return $b;
     }

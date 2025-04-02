@@ -940,9 +940,11 @@ if (!isset($bOK)) $bOK = false; if ($oEditor->bSave) $bDidSave = true; else if (
 							<p class="f-fp arrowdownafter"><?php WYTSD("MenuEditorMenuTitle"); ?> <!-- <span class="arrowdown"></span>
 								 <img id="arrowdown1" src="../images/arrow-down.png" alt=""> -->
 							</p>
-							<p>
-							<input id="WY_EditMenuTitle" class="WYtextfield r3 WYinput1" type=text name="WYEditMenuTitle" placeholder="...">
+							<p style="margin-bottom:8px">
+							<input id="WY_EditMenuTitle" class="WYtextfield r3 WYinput1" style="margin-bottom:3px" type=text name="WYEditMenuTitle" placeholder="...">
+							<span class="linkinstruction" style="opacity:1">Add a double forward slash  <span class="red">//</span> to force a line break</span>
 							</p>
+							
 							<p class="arrowdownafter"><?php WYTSD("MenuEditorMenuLink"); ?> <!-- <span class="arrowdown"></span> 
 								<img id="arrowdown2" src="../images/arrow-down.png" alt=""> -->
 							</p>

@@ -12,6 +12,8 @@ define("WY_QK_DOWNLOAD_FILENAME", "FILENAME");
 define("WY_QK_ORIGINAL_FILENAME", "ORG_FILENAME");
 define("WY_ATTACHMENT_CSS_ICON", "WebYepAttachmentIcon");
 
+
+
 function webyep_attachment($sFieldName, $bGlobal = false, $sCustomIcon = "", $mwEditorWidth=650, $mwEditorHeight=250)
 {
 	global $goApp;
@@ -166,9 +168,16 @@ class WYAttachmentElement extends WYElement
             $oLink->setInnerHTML($this->sOriginalFilename());
          }
          $sHTML .= $oLink->sDisplay();
-      }
+		 
+         // Add the HTML5 audio tag to the output
+           // $sAudioFileURL = htmlspecialchars($goApp->oDataURL->sPath . "/" . $sFN); // Adjust this line to get the correct URL for your audio file
+           // $sHTML .= "<audio controls>";
+           // $sHTML .= "<source src=\"" . $sAudioFileURL . "\" type=\"audio/mpeg\">";
+           // $sHTML .= "Your browser does not support the audio element.";
+           // $sHTML .= "</audio>";
+       }
 
-		return $sHTML;
-	}
+       return $sHTML;
+   }
 }
 ?>
