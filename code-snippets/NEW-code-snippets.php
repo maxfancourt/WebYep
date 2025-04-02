@@ -62,6 +62,10 @@ include("$webyep_sIncludePath/webyep.php");
 <!-- ATTACHEMENT CODE -->
 <?php webyep_attachment("attachment", false, "images/artwork-highlighter.png", 550, 240); // WebYepV2 ?>
 	
+<!-- AUDIO CODE -->
+<?php webyep_audio("audio files", "", '', '', 230, 650); // WebYepV3 ?>
+
+
 
 
 <!-- ////////////// LOGON  /////////////// -->
@@ -117,4 +121,19 @@ include("$webyep_sIncludePath/webyep.php");
 
 <!-- SEPERATE LOOPBUTTONS CODE -->
 <?php $webyep_oCurrentLoop->showEditButtons($webyep_oCurrentLoop->iLoopID); // WebYepV2 ?>
+
+
+
+
+
+
+<!-- //////////////  GUEST BOOK / COMMENTS   /////////////// -->
+
+<!-- GUESTBOOK CODE -->
+<?php webyep_guestbook("TheGuestbook", 200, "example@nowheremail.com", true); // WebYepV3 ?>
+
+<!-- REVIEW THE * webyep-guestbook-example.php * AS A GUIDE FOR THE COMPLETE ACTION -->
+
+
+
 
