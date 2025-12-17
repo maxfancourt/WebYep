@@ -2,9 +2,9 @@
 Experimental work towards WebYep 3.5
 ===================================
 
-Alongside ongoing work on WebYep 3.1, we’re also experimenting with a new inline editing option planned for a future WebYep 3.5 release. This is an addition to WebYep, not a replacement — the existing WebYep items remain in place, although some have been rewritten and streamlined to make them cleaner and more consistent internally.
+Alongside ongoing work on WebYep 3.1, we’re also experimenting with a new inline editing option planned for a future WebYep 3.5 release. This is an addition to WebYep, not a replacement, the existing WebYep items remain in place, although some have been rewritten and streamlined to make them cleaner and more consistent internally.
 
-The focus of this work is a more flexible, on-page editing experience, where content is edited directly on the page using structured blocks rather than a single free-form text field. This opens the door to building proper content sections — for example combining text, tables, columns and media into rearrangeable layouts — rather than just editing text and images in isolation.
+The focus of this work is a more flexible, on-page editing experience, where content is edited directly on the page using structured blocks rather than a single free-form text field. This opens the door to building proper content sections... for example combining text, tables, columns and media into rearrangeable layouts.. rather than just editing text and images in isolation.
 
 We’re also testing optional AI and email plugins to explore how they might support writing, updates, exports and day-to-day communication. This work is very much experimental and not production-ready, but we’re keen to see how it complements existing WebYep workflows and what people make of it.
 
